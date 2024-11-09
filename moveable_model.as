@@ -24,7 +24,7 @@ namespace MoveableModel
 
         void Spawn()
         {
-            self.pev.solid = SOLID_BBOX;
+            self.pev.solid = SOLID_NOT;
             self.pev.movetype = m_bUseBounce ? MOVETYPE_BOUNCE : MOVETYPE_TOSS;
             self.pev.friction = m_flEffectFriction / 100.0;
             self.pev.gravity = 1.0;
