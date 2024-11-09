@@ -15,7 +15,7 @@ The `moveable_model` entity comes with the following properties:
 | `targetname`     | `target_destination` | The name of the entity.                                                                          |                         |
 | `model`          | `studio`         | Path to the model file.                                                                          | `models/recruit.mdl`    |
 | `scale`          | `string`         | Scale of the model.                                                                              | `1`                     |
-| `canmove`        | `choices`        | Whether the model can be moved.                                                                  |                         |
+| `canmove`        | `choices`        | Whether the model can be moved.                                                                  | `1`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
 | `allowedtarget`  | `string`         | Name of players allowed to move this model. Leave empty to allow everyone.                       |                         |
@@ -27,13 +27,13 @@ The `moveable_model` entity comes with the following properties:
 |                  |                  | - `0`: Toss (`MOVETYPE_TOSS`)                                                                    |                         |
 |                  |                  | - `1`: Bounce (`MOVETYPE_BOUNCE`)                                                                |                         |
 | `effect_friction`| `string`         | Friction modifier (percentage).                                                                  | `100.0`                 |
-| `attack_pull`    | `choices`        | Allows attack pull.                                                                              |                         |
+| `attack_pull`    | `choices`        | Allows attack pull.                                                                              | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
-| `attack_push`    | `choices`        | Allows attack push.                                                                              |                         |
+| `attack_push`    | `choices`        | Allows attack push.                                                                              | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
-| `sync_angles`    | `choices`        | Synchronizes model's angles with the player’s.                                                   |                         |
+| `sync_angles`    | `choices`        | Synchronizes model's angles with the player’s.                                                   | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
 
