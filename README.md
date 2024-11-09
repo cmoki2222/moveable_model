@@ -1,9 +1,12 @@
 # `moveable_model`
+
 <video width="320" height="240" controls>
-  <source src="path/to/moving.webm" type="video/webm">
+  <source src="moving.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
+
 ---
+
 The `moveable_model` entity gives map makers a moveable model with customizable properties and animations. It can be set to be interactable by a specified player or all players, and it has different settings for movement types (toss or bounce) and interactions such as attack pull and attack push.
 
 ## Entity Definition
@@ -52,6 +55,7 @@ The `.fgd` file defines the entity `moveable_model`, designed for use in Sven Co
 ### Adding the `.fgd` File to Your Map Editor
 
 To use this `.fgd` file, include it in your map editor’s configuration. Then, place the `moveable_model` entity in your map and configure its properties as needed.
+
 ### CFG file
 To include the script in a map's .cfg file, add the following line to your map's .cfg file:
 
