@@ -52,6 +52,7 @@ void MapInit()
 {
     MoveableModel::Register();
 }
+```cpp
 To include the script in a map's .cfg file, add the following line to your map's .cfg file:
 
 ```cpp
