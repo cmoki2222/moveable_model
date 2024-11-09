@@ -68,4 +68,3 @@ void MapInit()
 {
     MoveableModel::Register();
 }
----
