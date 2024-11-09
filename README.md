@@ -16,7 +16,7 @@ The `moveable_model` entity is defined with the following properties:
   - `0`: No
 - **allowedtarget (string)**: The name of players who are allowed to move this model. Leave empty to allow everyone.
 - **anim (integer)**: The animation sequence number to play on use. Default is `0`.
-- **sequence (integer)**: The editor sequence number to use, overriding the sequence name. Default is `0`.
+- **sequence (integer)**: The editor sequence number to use. This property is for the map editor to easily figure out which animation the model will play. Default is `0`.
 - **min_size (string)**: Minimum size of the bounding box. Default is `-12 -12 0`.
 - **max_size (string)**: Maximum size of the bounding box. Default is `12 12 72`.
 - **usebounce (choices)**: The move type of the model. Choices are:
@@ -41,3 +41,14 @@ This entity allows map creators to place a moveable model with customizable prop
 
 To use this `.fgd` file, include it in your map editor's configuration and place the `moveable_model` entity in your map. Customize the properties as needed to achieve the desired behavior.
 
+### Registering the Script
+
+To register the script for this entity in a `MapInit()` function, include the following code in your initialization script:
+
+```cpp
+#include "moveable_model"
+
+void MapInit()
+{
+    MoveableModel::Register();
+}
