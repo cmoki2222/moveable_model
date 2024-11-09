@@ -1,7 +1,10 @@
 # `moveable_model`
 
+[moving.webm](https://github.com/user-attachments/assets/f2c9672e-af36-4879-a150-c4fad8e9161f)
+
 
 ---
+
 The `moveable_model` entity gives map makers a moveable model with customizable properties and animations. It can be set to be interactable by a specified player or all players, and it has different settings for movement types (toss or bounce) and interactions such as attack pull and attack push.
 
 ## Entity Definition
@@ -12,14 +15,14 @@ The `moveable_model` entity comes with the following properties:
 
 | Property         | Type             | Description                                                                                     | Default Value           |
 |------------------|------------------|-------------------------------------------------------------------------------------------------|-------------------------|
-| `targetname`     | `target_destination` | The name of the entity.                                                                          |                         |
+| `targetname`     | `string`         | The name of the entity.                                                                          |                         |
 | `model`          | `studio`         | Path to the model file.                                                                          | `models/recruit.mdl`    |
 | `scale`          | `string`         | Scale of the model and adjusts the bounding boxes accordingly.                                   | `1`                     |
 | `canmove`        | `choices`        | Whether the model can be moved.                                                                  | `1`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
 | `allowedtarget`  | `string`         | Name of players allowed to move this model. Leave empty to allow everyone.                       |                         |
-| `anim`           | `integer`        | Animation sequence number to play.                                                               | `0`                     |
+| `anim`           | `integer`        | Animation sequence number to play in-game.                                                       | `0`                     |
 | `sequence`       | `integer`        | Editor sequence number for previewing animations in the map editor.                              | `0`                     |
 | `min_size`       | `string`         | Minimum size of the bounding box.                                                                | `-12 -12 0`             |
 | `max_size`       | `string`         | Maximum size of the bounding box.                                                                | `12 12 72`              |
@@ -27,10 +30,10 @@ The `moveable_model` entity comes with the following properties:
 |                  |                  | - `0`: Toss (`MOVETYPE_TOSS`)                                                                    |                         |
 |                  |                  | - `1`: Bounce (`MOVETYPE_BOUNCE`)                                                                |                         |
 | `effect_friction`| `string`         | Friction modifier (percentage).                                                                  | `100.0`                 |
-| `attack_pull`    | `choices`        | Allows attack pull. (LMB)                                                                        | `0`                     |
+| `attack_pull`    | `choices`        | Allows attack pull. (RMB)                                                                        | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
-| `attack_push`    | `choices`        | Allows attack push. (RMB)                                                                        | `0`                     |
+| `attack_push`    | `choices`        | Allows attack push. (LMB)                                                                        | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
 | `sync_angles`    | `choices`        | Synchronizes model's angles with the player’s.                                                   | `0`                     |
@@ -50,6 +53,7 @@ The `.fgd` file defines the entity `moveable_model`, designed for use in Sven Co
 ### Adding the `.fgd` File to Your Map Editor
 
 To use this `.fgd` file, include it in your map editor’s configuration. Then, place the `moveable_model` entity in your map and configure its properties as needed.
+
 ### CFG file
 To include the script in a map's .cfg file, add the following line to your map's .cfg file:
 
