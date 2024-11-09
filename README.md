@@ -1,4 +1,6 @@
-# `moveable_model` model
+# `moveable_model`
+
+
 ---
 The `moveable_model` entity provides map creators with a moveable model that supports customizable properties and animations. The entity can be configured to be interactable by specific players or all players, and can also be set with different movement types (toss or bounce) and interactions such as attack pull and attack push.
 
