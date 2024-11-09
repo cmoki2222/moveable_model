@@ -1,7 +1,6 @@
-# `moveable_model` FGD
+# `moveable_model`
 
-This `.fgd` file defines a custom entity called `moveable_model`, designed for use in Sven Co-op maps. The entity allows for a moveable model with animation capabilities, making it highly customizable for map creators.
-
+The `moveable_model` entity provides map creators with a moveable model that supports customizable properties and animations. The entity can be configured to be interactable by specific players or all players, and can also be set with different movement types (toss or bounce) and interactions such as attack pull and attack push.
 ---
 
 ## Entity Definition
@@ -39,9 +38,9 @@ The `moveable_model` entity comes with the following properties:
 
 ---
 
-### Description
+### FGD
 
-The `moveable_model` entity provides map creators with a moveable model that supports customizable properties and animations. The entity can be configured to be interactable by specific players or all players, and can also be set with different movement types (toss or bounce) and interactions such as attack pull and attack push.
+The `.fgd` file defines the entity `moveable_model`, designed for use in Sven Co-op maps. The entity allows for a moveable model with animation capabilities, making it customizable for mappers.
 
 ---
 
