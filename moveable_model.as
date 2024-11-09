@@ -24,7 +24,7 @@ namespace MoveableModel
 
         void Spawn()
         {
-            self.pev.solid = SOLID_NOT;
+            self.pev.solid = SOLID_BBOX;
             self.pev.movetype = m_bUseBounce ? MOVETYPE_BOUNCE : MOVETYPE_TOSS;
             self.pev.friction = m_flEffectFriction / 100.0;
             self.pev.gravity = 1.0;
@@ -181,7 +181,7 @@ namespace MoveableModel
             if (holder is null)
             {
                 @holder = pActivator;
-                self.pev.solid = SOLID_BBOX;
+                self.pev.solid = SOLID_NOT;
                 self.pev.movetype = MOVETYPE_NOCLIP;
                 currentOffset = Vector(0, 0, 0);  // Reset currentOffset when picked up
                 PlayAnimation();
