@@ -29,7 +29,7 @@ The `moveable_model` entity comes with the following properties:
 | `usebounce`      | `choices`        | Movement type of the model.                                                                      |                         |
 |                  |                  | - `0`: Toss (`MOVETYPE_TOSS`)                                                                    |                         |
 |                  |                  | - `1`: Bounce (`MOVETYPE_BOUNCE`)                                                                |                         |
-| `effect_friction`| `float`          | Friction modifier (percentage).                                                                  | `100.0`                 |
+| `effect_friction`| `string`         | Friction modifier (percentage).                                                                  | `100.0`                 |
 | `attack_pull`    | `choices`        | Allows attack pull. (RMB)                                                                        | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
