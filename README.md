@@ -50,6 +50,12 @@ The `.fgd` file defines the entity `moveable_model`, designed for use in Sven Co
 ### Adding the `.fgd` File to Your Map Editor
 
 To use this `.fgd` file, include it in your map editor’s configuration. Then, place the `moveable_model` entity in your map and configure its properties as needed.
+### CFG file
+To include the script in a map's .cfg file, add the following line to your map's .cfg file:
+
+map_script your_map/your_mapinit
+
+Replace your_map with the name of your map and your_mapinit with the name of your map initialization script. This will ensure that the moveable_model entity is registered and ready to be used in your map.
 
 ### Registering the Script
 
@@ -63,9 +69,3 @@ void MapInit()
     MoveableModel::Register();
 }
 ---
-### CFG file
-To include the script in a map's .cfg file, add the following line to your map's .cfg file:
-
-map_script your_map/your_mapinit
-
-Replace your_map with the name of your map and your_mapinit with the name of your map initialization script. This will ensure that the moveable_model entity is registered and ready to be used in your map.
