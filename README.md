@@ -30,10 +30,10 @@ The `moveable_model` entity comes with the following properties:
 |                  |                  | - `0`: Toss (`MOVETYPE_TOSS`)                                                                    |                         |
 |                  |                  | - `1`: Bounce (`MOVETYPE_BOUNCE`)                                                                |                         |
 | `effect_friction`| `string`         | Friction modifier (percentage).                                                                  | `100.0`                 |
-| `attack_pull`    | `choices`        | Allows attack pull. (LMB)                                                                        | `0`                     |
+| `attack_pull`    | `choices`        | Allows attack pull. (RMB)                                                                        | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
-| `attack_push`    | `choices`        | Allows attack push. (RMB)                                                                        | `0`                     |
+| `attack_push`    | `choices`        | Allows attack push. (LMB)                                                                        | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
 | `sync_angles`    | `choices`        | Synchronizes model's angles with the player’s.                                                   | `0`                     |
