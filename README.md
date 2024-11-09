@@ -1,12 +1,8 @@
+# `moveable_model`
 <video width="320" height="240" controls>
   <source src="path/to/moving.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
-
-
-# `moveable_model`
-
-
 ---
 The `moveable_model` entity gives map makers a moveable model with customizable properties and animations. It can be set to be interactable by a specified player or all players, and it has different settings for movement types (toss or bounce) and interactions such as attack pull and attack push.
 
