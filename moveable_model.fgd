@@ -1,6 +1,6 @@
 @PointClass base(Targetname, Angles) color(255 165 0) studio() = moveable_model : "Moveable Model with Animations"
 [
-    targetname(target_destination) : "Name"
+    targetname(string) : "Name"
     model(studio) : "Model" : "models/recruit.mdl"
     scale(string) : "Scale Model" : "1"
     canmove(choices) : "Can Move" : 1 =
