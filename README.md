@@ -2,7 +2,7 @@
 
 
 ---
-The `moveable_model` entity provides map creators with a moveable model that supports customizable properties and animations. The entity can be configured to be interactable by specific players or all players, and can also be set with different movement types (toss or bounce) and interactions such as attack pull and attack push.
+The `moveable_model` entity gives map makers a moveable model with customizable properties and animations. It can be set to be interactable by a specified player or all players, and it has different settings for movement types (toss or bounce) and interactions such as attack pull and attack push.
 
 ## Entity Definition
 
@@ -14,12 +14,12 @@ The `moveable_model` entity comes with the following properties:
 |------------------|------------------|-------------------------------------------------------------------------------------------------|-------------------------|
 | `targetname`     | `target_destination` | The name of the entity.                                                                          |                         |
 | `model`          | `studio`         | Path to the model file.                                                                          | `models/recruit.mdl`    |
-| `scale`          | `string`         | Scale of the model.                                                                              | `1`                     |
-| `canmove`        | `choices`        | Whether the model can be moved.                                                                  |                         |
+| `scale`          | `string`         | Scale of the model and adjusts the bounding boxes accordingly.                                   | `1`                     |
+| `canmove`        | `choices`        | Whether the model can be moved.                                                                  | `1`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
 | `allowedtarget`  | `string`         | Name of players allowed to move this model. Leave empty to allow everyone.                       |                         |
-| `anim`           | `integer`        | Animation sequence number to play on use.                                                        | `0`                     |
+| `anim`           | `integer`        | Animation sequence number to play.                                                               | `0`                     |
 | `sequence`       | `integer`        | Editor sequence number for previewing animations in the map editor.                              | `0`                     |
 | `min_size`       | `string`         | Minimum size of the bounding box.                                                                | `-12 -12 0`             |
 | `max_size`       | `string`         | Maximum size of the bounding box.                                                                | `12 12 72`              |
@@ -27,13 +27,13 @@ The `moveable_model` entity comes with the following properties:
 |                  |                  | - `0`: Toss (`MOVETYPE_TOSS`)                                                                    |                         |
 |                  |                  | - `1`: Bounce (`MOVETYPE_BOUNCE`)                                                                |                         |
 | `effect_friction`| `string`         | Friction modifier (percentage).                                                                  | `100.0`                 |
-| `attack_pull`    | `choices`        | Allows attack pull.                                                                              |                         |
+| `attack_pull`    | `choices`        | Allows attack pull. (LMB)                                                                        | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
-| `attack_push`    | `choices`        | Allows attack push.                                                                              |                         |
+| `attack_push`    | `choices`        | Allows attack push. (RMB)                                                                        | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
-| `sync_angles`    | `choices`        | Synchronizes model's angles with the player’s.                                                   |                         |
+| `sync_angles`    | `choices`        | Synchronizes model's angles with the player’s.                                                   | `0`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
 
@@ -55,7 +55,7 @@ To include the script in a map's .cfg file, add the following line to your map's
 
 `map_script your_map/your_mapinit`
 
-Replace `your_map` with the name of your map and `your_mapinit` with the name of your map initialization script. This will ensure that the `moveable_model` is registered and ready to be used in your map.
+Replace `your_map` with the name of your map's script folder and `your_mapinit` with the name of your map's initialization script. This will ensure that the `moveable_model` is registered and ready to be used in your map.
 
 ### Registering the Script
 
