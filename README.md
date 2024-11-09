@@ -19,7 +19,7 @@ The `moveable_model` entity comes with the following properties:
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
 | `allowedtarget`  | `string`         | Name of players allowed to move this model. Leave empty to allow everyone.                       |                         |
-| `anim`           | `integer`        | Animation sequence number to play.                                                        | `0`                     |
+| `anim`           | `integer`        | Animation sequence number to play.                                                               | `0`                     |
 | `sequence`       | `integer`        | Editor sequence number for previewing animations in the map editor.                              | `0`                     |
 | `min_size`       | `string`         | Minimum size of the bounding box.                                                                | `-12 -12 0`             |
 | `max_size`       | `string`         | Maximum size of the bounding box.                                                                | `12 12 72`              |
