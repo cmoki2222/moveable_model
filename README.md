@@ -13,11 +13,11 @@ The `moveable_model` entity gives map makers a moveable model with customizable 
 
 The `moveable_model` entity comes with the following properties:
 
-| Property         | Type             | Description                                                                                     | Default Value           |
-|------------------|------------------|-------------------------------------------------------------------------------------------------|-------------------------|
+| Property         | Type             | Description                                                                                      | Default Value           |
+|------------------|------------------|--------------------------------------------------------------------------------------------------|-------------------------|
 | `targetname`     | `string`         | The name of the entity.                                                                          |                         |
 | `model`          | `studio`         | Path to the model file.                                                                          | `models/recruit.mdl`    |
-| `scale`          | `string`         | Scale of the model and adjusts the bounding boxes accordingly.                                   | `1`                     |
+| `scale`          | `float`          | Scale of the model and adjusts the bounding boxes accordingly.                                   | `1`                     |
 | `canmove`        | `choices`        | Whether the model can be moved.                                                                  | `1`                     |
 |                  |                  | - `1`: Yes                                                                                       |                         |
 |                  |                  | - `0`: No                                                                                        |                         |
