@@ -1,0 +1,37 @@
+@PointClass base(Targetname, Angles) color(255 165 0) studio() = moveable_model : "Moveable Model with Animations"
+[
+    targetname(target_destination) : "Name"
+    model(studio) : "Model" : "models/recruit.mdl"
+    scale(string) : "Scale Model" : "1"
+    canmove(choices) : "Can Move" : 1 =
+    [
+        1 : "Yes"
+        0 : "No"
+    ]
+    allowedtarget(string) : "Allowed Target Name" : "" : "Specify the targetname of players who can move this. Leave empty for everyone."
+    anim(integer) : "Animation Sequence" : 0 : "Enter the sequence number to play on use"
+    sequence(integer) : "Editor Sequence" : 0 : "Enter the editor sequence number to use. This will override the sequence name."
+    min_size(string) : "Minimum Size" : "-12 -12 0"
+    max_size(string) : "Maximum Size" : "12 12 72"
+    usebounce(choices) : "Move Type" : 0 =
+    [
+        0 : "Toss (MOVETYPE_TOSS)"
+        1 : "Bounce (MOVETYPE_BOUNCE)"
+    ]
+    effect_friction(string) : "Friction modifier (%)" : "100.0"
+    attack_pull(choices) : "Allow Attack Pull" : 0 =
+    [
+        1 : "Yes"
+        0 : "No"
+    ]
+    attack_push(choices) : "Allow Attack Push" : 0 =
+    [
+        1 : "Yes"
+        0 : "No"
+    ]
+    sync_angles(choices) : "Sync Angles" : 0 =
+    [
+        1 : "Yes"
+        0 : "No"
+    ]
+]
