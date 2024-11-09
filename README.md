@@ -1,9 +1,7 @@
 # `moveable_model`
 
-<video width="320" height="240" controls>
-  <source src="moving.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+[moving.webm](https://github.com/user-attachments/assets/f2c9672e-af36-4879-a150-c4fad8e9161f)
+
 
 ---
 
