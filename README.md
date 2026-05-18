@@ -2,6 +2,10 @@
 
 The `moveable_model` entity gives Sven Co-op mappers a reusable animated prop that players can pick up, carry, push, pull, and drop. It is designed as a lightweight standalone entity that can be reused across different maps and projects.
 
+## Demo
+
+https://github.com/user-attachments/assets/f2c9672e-af36-4879-a150-c4fad8e9161f
+
 ## Highlights
 
 - Pick up and drop a model with `+use`
