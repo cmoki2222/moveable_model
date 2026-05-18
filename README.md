@@ -1,69 +1,57 @@
 # `moveable_model`
 
-[moving.webm](https://github.com/user-attachments/assets/f2c9672e-af36-4879-a150-c4fad8e9161f)
+The `moveable_model` entity gives Sven Co-op mappers a reusable animated prop that players can pick up, carry, push, pull, and drop. It is designed as a lightweight standalone entity that can be reused across different maps and projects.
 
+## Highlights
 
----
+- Pick up and drop a model with `+use`
+- Held models follow the player’s aim point
+- Optional LMB push / RMB pull distance adjustment while held
+- Basic wall trace keeps held models from being placed directly through geometry
+- Optional yaw syncing with the holder
+- Toss or bounce movement after dropping
+- Configurable bounding box, scale, animation, friction, and allowed player targetname
 
-The `moveable_model` entity gives map makers a moveable model with customizable properties and animations. It can be set to be interactable by a specified player or all players, and it has different settings for movement types (toss or bounce) and interactions such as attack pull and attack push.
+## What Changed
+
+- Improved held-model positioning so props follow the player’s aim more cleanly
+- Added optional push and pull controls while carrying an object
+- Added wall tracing to reduce direct clipping through level geometry
+- Added optional yaw syncing for models that should rotate with the holder
+- Improved drop behavior with configurable toss or bounce movement
+- Preserved scale-aware bounding boxes for resized models
+- Refined the script structure and documentation for easier reuse
 
 ## Entity Definition
 
 ### `moveable_model`
 
-The `moveable_model` entity comes with the following properties:
-
-| Property         | Type             | Description                                                                                      | Default Value           |
-|------------------|------------------|--------------------------------------------------------------------------------------------------|-------------------------|
-| `targetname`     | `string`         | The name of the entity.                                                                          |                         |
-| `model`          | `studio`         | Path to the model file.                                                                          | `models/recruit.mdl`    |
-| `scale`          | `float`          | Scale of the model and adjusts the bounding boxes accordingly.                                   | `1`                     |
-| `canmove`        | `choices`        | Whether the model can be moved.                                                                  | `1`                     |
-|                  |                  | - `1`: Yes                                                                                       |                         |
-|                  |                  | - `0`: No                                                                                        |                         |
-| `allowedtarget`  | `string`         | Name of players allowed to move this model. Leave empty to allow everyone.                       |                         |
-| `anim`           | `integer`        | Animation sequence number to play in-game.                                                       | `0`                     |
-| `sequence`       | `integer`        | Editor sequence number for previewing animations in the map editor.                              | `0`                     |
-| `min_size`       | `string`         | Minimum size of the bounding box.                                                                | `-12 -12 0`             |
-| `max_size`       | `string`         | Maximum size of the bounding box.                                                                | `12 12 72`              |
-| `usebounce`      | `choices`        | Movement type of the model.                                                                      |                         |
-|                  |                  | - `0`: Toss (`MOVETYPE_TOSS`)                                                                    |                         |
-|                  |                  | - `1`: Bounce (`MOVETYPE_BOUNCE`)                                                                |                         |
-| `effect_friction`| `string`         | Friction modifier (percentage).                                                                  | `100.0`                 |
-| `attack_pull`    | `choices`        | Allows attack pull. (RMB)                                                                        | `0`                     |
-|                  |                  | - `1`: Yes                                                                                       |                         |
-|                  |                  | - `0`: No                                                                                        |                         |
-| `attack_push`    | `choices`        | Allows attack push. (LMB)                                                                        | `0`                     |
-|                  |                  | - `1`: Yes                                                                                       |                         |
-|                  |                  | - `0`: No                                                                                        |                         |
-| `sync_angles`    | `choices`        | Synchronizes model's angles with the player’s.                                                   | `0`                     |
-|                  |                  | - `1`: Yes                                                                                       |                         |
-|                  |                  | - `0`: No                                                                                        |                         |
-
----
-
-### FGD
-
-The `.fgd` file defines the entity `moveable_model`, designed for use in Sven Co-op maps. The entity allows for a moveable model with animation capabilities, making it customizable for mappers.
-
----
+| Property | Type | Description | Default |
+|---|---|---|---|
+| `targetname` | string | Entity name | |
+| `model` | studio | Model path | `models/recruit.mdl` |
+| `scale` | float | Model scale; bounding box scales with it | `1` |
+| `canmove` | choices | Whether players can move it | `1` |
+| `allowedtarget` | string | Only players with this targetname can move/push it; blank allows everyone | |
+| `anim` | integer | Animation sequence played in-game | `0` |
+| `sequence` | integer | Editor preview sequence value | `0` |
+| `min_size` | string | Bounding box minimums | `-12 -12 0` |
+| `max_size` | string | Bounding box maximums | `12 12 72` |
+| `usebounce` | choices | `0` Toss, `1` Bounce | `0` |
+| `effect_friction` | string | Friction modifier percentage | `100.0` |
+| `attack_pull` | choices | Allow RMB to pull held model closer | `0` |
+| `attack_push` | choices | Allow LMB to push held model farther | `0` |
+| `sync_angles` | choices | Match model yaw to the holder’s view yaw | `0` |
 
 ## Usage
 
-### Adding the `.fgd` File to Your Map Editor
+### Add the FGD to your editor
 
-To use this `.fgd` file, include it in your map editor’s configuration. Then, place the `moveable_model` entity in your map and configure its properties as needed.
+Include `moveable_model.fgd` in your map editor configuration, then place a `moveable_model` point entity and configure the properties you need.
 
-### CFG file
-To include the script in a map's .cfg file, add the following line to your map's .cfg file:
+### Register the script
 
-`map_script your_map/your_mapinit`
-
-Replace `your_map` with the name of your map's script folder and `your_mapinit` with the name of your map's initialization script. This will ensure that the `moveable_model` is registered and ready to be used in your map.
-
-### Registering the Script
-
-To register the script for this entity in a `MapInit()` function, include the following code in your initialization script:
+Use the included `moveable_model_register.as`, or include the entity directly in your map script:
 
 ```cpp
 #include "moveable_model"
@@ -72,3 +60,16 @@ void MapInit()
 {
     MoveableModel::Register();
 }
+```
+
+### Map CFG example
+
+```text
+map_script your_map/your_mapinit
+```
+
+## Notes
+
+- `allowedtarget` is checked for both using and physical player pushes.
+- Held props automatically drop if the holder releases `+use`, dies, disconnects, or becomes invalid.
+- The entity is intended to remain flexible and reusable for a wide range of Sven Co-op mapping setups.
